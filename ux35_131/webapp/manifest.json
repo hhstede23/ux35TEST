@@ -1,0 +1,179 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "academy.ux35131",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.33.0",
+      "toolsId": "57d14544-b623-4930-a317-bce56bc811a7"
+    },
+    "dataSources": {
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zux35_131_v4/srvd/sap/zux35_131_so/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.43",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "academy.ux35131.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "zux35_131_c_soList",
+          "target": "zux35_131_c_soList"
+        },
+        {
+          "pattern": "zux35_131_c_so({key}):?query:",
+          "name": "zux35_131_c_soObjectPage",
+          "target": "zux35_131_c_soObjectPage"
+        },
+        {
+          "pattern": "zux35_131_c_so({key})/_Item({key2}):?query:",
+          "name": "zux35_131_c_salesorderitemObjectPage",
+          "target": "zux35_131_c_salesorderitemObjectPage"
+        }
+      ],
+      "targets": {
+        "zux35_131_c_soList": {
+          "type": "Component",
+          "id": "zux35_131_c_soList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/zux35_131_c_so",
+              "variantManagement": "Page",
+              "navigation": {
+                "zux35_131_c_so": {
+                  "detail": {
+                    "route": "zux35_131_c_soObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "zux35_131_c_soObjectPage": {
+          "type": "Component",
+          "id": "zux35_131_c_soObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/zux35_131_c_so",
+              "navigation": {
+                "_Item": {
+                  "detail": {
+                    "route": "zux35_131_c_salesorderitemObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "zux35_131_c_salesorderitemObjectPage": {
+          "type": "Component",
+          "id": "zux35_131_c_salesorderitemObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/zux35_131_c_so/_Item"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.fe": {
+    "app": {
+      "enableLazyLoading": true
+    }
+  }
+}
