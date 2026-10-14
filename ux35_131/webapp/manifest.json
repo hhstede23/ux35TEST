@@ -129,6 +129,15 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "customFunctionURL": {
+                      "press": "academy.ux35131.ext.controller.customFunctionURL.FunctionUrl",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Open Customer"
+                    }
                   }
                 }
               }
