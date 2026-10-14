@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: academy.ux35131
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: A23_500_HTTPS
+          url: http://bfesa23.academy:44300
+          client: '500'
+        app:
+          name: ZUX35_131
+          package: ZUX35_131
+          transport: A23K902379
+        exclude:
+          - /test/
+          - /localService/
