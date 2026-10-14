@@ -147,13 +147,12 @@
               "name": "sap.suite.ui.generic.template.ObjectPage"
             },
             "pages": {
-              "ObjectPage|to_Item": {
-                "navigationProperty": "to_Item",
-                "entitySet": "zux35_131_c_salesorderitem",
-                "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+              "ObjectPage|zux35_131_c_salesorderitem": {
                 "component": {
                   "name": "sap.suite.ui.generic.template.ObjectPage"
-                }
+                },
+                "entitySet": "zux35_131_c_salesorderitem",
+                "navigationProperty": "to_Item"
               }
             }
           }
