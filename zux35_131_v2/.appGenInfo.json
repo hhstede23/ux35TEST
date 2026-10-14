@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Wed Oct 14 2026 08:04:57 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://bfesa23.academy:44300/sap/opu/odata/sap/ZUX35_131_V2",
+    "appName": "zux35_131_v2",
+    "appTitle": "zux35_131_v2",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "academy",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.120.43",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.33.0",
+    "template": "List Report Page V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "zux35_131_c_so"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "to_Item"
+      }
+    ],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}
